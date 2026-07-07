@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בוחן עצמי — נוירואנטומיה</title>
+<meta name="description" content="בוחן עצמי אינטראקטיבי בנוירואנטומיה: 100 שאלות בסגנון המבחנים, עם משוב מיידי והסבר לכל תשובה.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="index.html">🧠 בוחן עצמי — נוירואנטומיה</a>
+  <span class="nav-tag">משוב מיידי · הסבר לכל תשובה</span>
+</div></nav>
+
+<div class="container">
+
+  <!-- ===== מסך פתיחה ===== -->
+  <section id="screen-start" class="screen active">
+    <div class="hero">
+      <h1>מוכנים למבחן בנוירואנטומיה?</h1>
+      <p>מאגר של 100 שאלות אמריקאיות בהשראת מבחני העבר וחומר הקורס — עם משוב מיידי והסבר מלא לכל תשובה. בוחרים נושא וכמות, ומתחילים.</p>
+      <div class="hero-stats">
+        <div><div class="n" id="stat-total">100</div><div class="l">שאלות במאגר</div></div>
+        <div><div class="n">10</div><div class="l">נושאים</div></div>
+        <div><div class="n">∞</div><div class="l">ניסיונות, בלי הגבלת זמן</div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>בחירת נושא</h2>
+      <p class="sub">אפשר לתרגל את כל החומר יחד או להתמקד בנושא ספציפי.</p>
+      <div class="field">
+        <div class="chips" id="topic-chips"></div>
+      </div>
+
+      <h2>כמות שאלות</h2>
+      <p class="sub">כמה שאלות בסבב? הסדר תמיד אקראי.</p>
+      <div class="field">
+        <div class="count-opts" id="count-opts"></div>
+      </div>
+
+      <button class="btn primary big" id="btn-start">התחלת הבוחן ←</button>
+    </div>
+
+    <div class="footer">
+      נבנה מתוך מבחני עבר וחומר הקורס בנוירואנטומיה · לתרגול בלבד, אינו תחליף לחומר הרשמי.
+    </div>
+  </section>
+
+  <!-- ===== מסך בוחן ===== -->
+  <section id="screen-quiz" class="screen">
+    <div class="quiz-top">
+      <div class="progress-wrap">
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="progress-label" id="progress-label"></div>
+      </div>
+      <div class="score-pill" id="score-pill">0 נכונות</div>
+    </div>
+
+    <div class="qcard">
+      <span class="topic-badge" id="q-topic"></span>
+      <h2 class="qtext" id="q-text"></h2>
+      <div class="options" id="q-options"></div>
+      <div class="explain" id="q-explain">
+        <div class="verdict" id="q-verdict"></div>
+        <div id="q-explain-text"></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="btn" id="btn-quit">יציאה</button>
+        <button class="btn primary" id="btn-next" disabled>הבא ←</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== מסך תוצאות ===== -->
+  <section id="screen-result" class="screen">
+    <div class="panel">
+      <div class="result-head">
+        <div class="result-score" id="result-score">0/0</div>
+        <div class="result-grade" id="result-grade"></div>
+      </div>
+      <div class="quiz-actions" style="justify-content:center;gap:12px">
+        <button class="btn primary" id="btn-again">סבב חדש</button>
+        <button class="btn" id="btn-home">חזרה למסך הבית</button>
+      </div>
+    </div>
+    <div id="review-wrap"></div>
+  </section>
+
+</div>
+
+<script src="assets/questions.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
