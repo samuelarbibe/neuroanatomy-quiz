@@ -61,6 +61,8 @@
       <div class="score-pill" id="score-pill">0 נכונות</div>
     </div>
 
+    <div class="q-nav" id="q-nav" aria-label="ניווט בין שאלות"></div>
+
     <div class="qcard">
       <span class="topic-badge" id="q-topic"></span>
       <h2 class="qtext" id="q-text"></h2>
@@ -71,7 +73,10 @@
       </div>
       <div class="quiz-actions">
         <button class="btn" id="btn-quit">יציאה</button>
-        <button class="btn primary" id="btn-next" disabled>הבא ←</button>
+        <div class="quiz-nav-btns">
+          <button class="btn" id="btn-prev">→ הקודם</button>
+          <button class="btn primary" id="btn-next" disabled>הבא ←</button>
+        </div>
       </div>
     </div>
   </section>
@@ -83,8 +88,9 @@
         <div class="result-score" id="result-score">0/0</div>
         <div class="result-grade" id="result-grade"></div>
       </div>
-      <div class="quiz-actions" style="justify-content:center;gap:12px">
+      <div class="quiz-actions result-actions">
         <button class="btn primary" id="btn-again">סבב חדש</button>
+        <button class="btn" id="btn-review">סקירת השאלות</button>
         <button class="btn" id="btn-home">חזרה למסך הבית</button>
       </div>
     </div>

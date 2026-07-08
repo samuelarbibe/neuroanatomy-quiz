@@ -146,6 +146,38 @@ html, body {
 .topic-badge { display: inline-block; background: var(--brand-soft); color: var(--brand); font-size: .78rem; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
 .qtext { font-size: 1.2rem; font-weight: 700; margin: 0 0 18px; }
 
+.q-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  max-height: 120px;
+  overflow-y: auto;
+}
+.qnav-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .12s ease;
+}
+.qnav-btn:hover { border-color: var(--brand); color: var(--brand); }
+.qnav-btn.current { background: var(--brand); color: #fff; border-color: var(--brand); }
+.qnav-btn.done-ok { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); }
+.qnav-btn.done-bad { background: var(--bad-soft); color: var(--bad); border-color: var(--bad); }
+.qnav-btn.current.done-ok,
+.qnav-btn.current.done-bad { box-shadow: 0 0 0 2px var(--brand); }
+
 .options { display: flex; flex-direction: column; gap: 10px; }
 .opt {
   text-align: right;
@@ -159,9 +191,12 @@ html, body {
   font-family: inherit;
   transition: all .12s ease;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+  min-height: 52px;
 }
+.opt .opt-letter { font-weight: 800; flex-shrink: 0; min-width: 1.4em; }
+.opt .opt-text { flex: 1; line-height: 1.5; }
 .opt:hover:not(:disabled) { border-color: var(--brand); background: var(--brand-soft); }
 .opt:disabled { cursor: default; }
 .opt .mark { font-weight: 800; margin-inline-start: auto; }
@@ -175,7 +210,11 @@ html, body {
 .explain.good .verdict { color: var(--ok); }
 .explain.bad .verdict { color: var(--bad); }
 
-.quiz-actions { margin-top: 18px; display: flex; justify-content: space-between; gap: 10px; }
+.quiz-actions { margin-top: 18px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.quiz-nav-btns { display: flex; gap: 8px; }
+.result-actions { justify-content: center; flex-wrap: wrap; }
+.btn-sm { padding: 7px 12px; font-size: .85rem; margin-top: 10px; }
+.review-item.review-wrong { border-color: var(--bad); border-width: 1.5px; }
 
 /* ===== Results ===== */
 .result-head { text-align: center; padding: 10px 0 20px; }
